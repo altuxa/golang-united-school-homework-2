@@ -16,16 +16,17 @@ package square
 
 type intCustomType int
 
+const SidesTriangle intCustomType = 3
+const SidesSquare intCustomType = 4
+const SidesCircle intCustomType = 0
+
 func CalcSquare(sideLen float64, sidesNum intCustomType) float64 {
-	SidesTriangle := 3
-	SidesSquare := 4
-	SidesCircle := 0
-	if int(sidesNum) == SidesSquare {
+	if sidesNum == SidesSquare {
 		return sideLen * sideLen
-	} else if int(sidesNum) == SidesTriangle {
+	} else if sidesNum == SidesTriangle {
 		a := sideLen * sideLen * 1.73205
 		return a / 4
-	} else if int(sidesNum) == SidesCircle {
+	} else if sidesNum == SidesCircle {
 		return sideLen * sideLen * 3.14159265358979323846264338327950288419716939937510582097494459
 	} else {
 		return 0
