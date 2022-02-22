@@ -8,13 +8,19 @@ package square
 // CalcSquare(10.0, SidesSquare)
 // CalcSquare(10.0, SidesCircle)
 
-func CalcSquare(sideLen float64, sidesNum int) float64 {
-	if sidesNum == 4 {
+type Aboba struct {
+	SidesTriangle int
+	SidesSquare   int
+	SidesCircle   int
+}
+
+func CalcSquare(sideLen float64, sidesNum Aboba) float64 {
+	if sidesNum.SidesSquare == 4 {
 		return sideLen * sideLen
-	} else if sidesNum == 3 {
+	} else if sidesNum.SidesTriangle == 3 {
 		a := sideLen * sideLen * 1.73205
 		return a / 4
-	} else if sidesNum == 0 {
+	} else if sidesNum.SidesCircle == 0 {
 		return sideLen * sideLen * 3.14159265358979323846264338327950288419716939937510582097494459
 	} else {
 		return 0
